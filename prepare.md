@@ -29,7 +29,7 @@ print(response.cookies) # cookie
 ```
 https://www.bilibili.com/?spm_id_from=×××.××××.×.×
 ```
-你可以理解为？后面的一堆都是查询字符串，spm_id_from是参数，×××.××××.×.×是参数值（可能根据你的账号和端口）
+你可以理解为？后面的一堆都是查询字符串，spm_id_from是参数，×××.××××.×.×是参数值（可能根据你的账号和端口），所以如果它有明确的参数指向，我们可以执行下面的操作
 ```python
 import requests
 
@@ -51,7 +51,7 @@ print(response.text)
   "url": "http://httpbin.org/get?name=germey&age=22"
 }
 ```
-或者使用params的方法：
+或者使用params的方法（这个比较重要）：
 ```python
 import requests
 
@@ -59,7 +59,10 @@ data = {
  'name': 'germey',
  'age': 22
 }
+# 这个可能需要有明确的参数指向（？）不确定b站那个网址能不能这么干
 response = requests.get("http://httpbin.org/get", params=data)
 print(response.text)
 
 ```
+## 添加请求头
+## POST请求基本使用
